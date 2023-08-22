@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/kiosk/choice_payment.css' %}" rel="stylesheet">
+    <title>choice_payment</title>
+</head>
+</head>
+<body>
+    <div class="allcontainer">
+        <div class="main">
+            <div class="main_top">
+                <button class="button button--shikoba button--round-s button--border-thin button--size0"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'main' %}">처음화면</a></span></button>
+                <div class="main_top_mid"><img class="img-logo" src="{% static 'image/kiosk/롯데리아.jpg'%}"></div>
+                <button class="button button--shikoba button--round-s button--border-thin button--size0"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'kiosk' %}">이전화면</a></span></button>
+            </div>
+
+
+
+            <div class="main_mid">
+                <div class="main_mid_select">
+                    
+
+                </div>
+
+
+                <div class="menu-choice">
+                    <div class="main_mid_side">
+                        &nbsp&nbsp&nbsp&nbsp&nbsp
+                    </div>
+            
+                    <div class="main_mid_mid">
+                        <div class="menucontain">
+                            <button class="payment1"><img src="{% static 'image/kiosk/payment1.png'%}"><a href="{% url 'lotteria'%}">카드</a>
+                                <div class="p1">신용카드/체크카드<br>모바일금액권<br>간편결제<br></div>
+                            </button>
+                            <button class="payment2"><img src="{% static 'image/kiosk/payment2.png'%}"><a href="{% url 'lotteria'%}">디지털쿠폰/교환권</a>
+                                <div class="p1">롯데리아제품교환권[지류]<br>모바일제품교환권</div>
+                        
+                            </button>
+                            <button class="payment3"><img src="{% static 'image/kiosk/payment3.png'%}"><a href="{% url 'lotteria'%}">현금</a>
+                                <div class="p1">카운터에서 주문해주세요</div>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div class="main_mid_side">
+                        &nbsp&nbsp&nbsp&nbsp&nbsp
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="main_bottom">
+
+            </div>
+        </div>
+    </div>
+</body>

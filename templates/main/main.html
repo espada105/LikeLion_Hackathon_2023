@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/main/main.css' %}"> {% comment %}
+        <link rel="stylesheet" href="main.css" />
+        {% endcomment %}
+        <script src="{% static 'js/main.js'%}"></script>
+        <title>hackathon</title>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="leftbox">
+                <div class="menucontain">
+                    <div class="menu">MENU</div>
+                    <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'kiosk' %}">키오스크</a></span></button>
+                    <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'signup' %}">회원가입</a></span></button>
+                    {% if login_session %}
+                    <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'logout' %}">로그아웃</a></span></button>
+                    {% else %}
+                    <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'login' %}">로그인</a></span></button>
+                    {% endif %}
+                    <button class="button button--shikoba button--round-s button--border-thin"><i class="button__icon icon icon-microphone"></i><span><a href="{% url 'internetpayment'%}">인터넷 결제</a></span></button>
+                </div>
+
+                <div class="teamname">team 5 </div>
+            </div>
+
+            <div class="rightpage">
+                <div class="rightbox">
+                    <div class="righttextbox-top">사이버 격차 줄이기</div>
+                    <hr />
+                    <div class="righttextbox">홍성인</div>
+                    <div class="righttextbox">전형준</div>
+                    <div class="righttextbox">이가현</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

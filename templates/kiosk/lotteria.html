@@ -1,0 +1,259 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/kiosk/lotteria.css'%}" rel="stylesheet">
+    <script src="{% static 'js/kiosk/lotteria.js' %}"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <title>lotteria</title>
+</head>
+
+<body>
+    <div class="allcontainer">
+        <div class="main">
+            <div class="main_top">
+
+                <button class="button button--shikoba button--round-s button--border-thin button--size0"><i
+                        class="button__icon icon icon-microphone"></i><span><a href="{% url 'main' %}">처음화면</a></span></button>
+                <div class="main_top_mid"><img class="img-logo" src="{% static 'image/kiosk/롯데리아.jpg'%}"></div>
+                <button class="button button--shikoba button--round-s button--border-thin button--size0"><i
+                        class="button__icon icon icon-microphone"></i><span><a class="but" href="{% url 'kiosk' %}">이전화면</a></span></button>
+            </div>
+
+
+            <div class="menu-choice">
+                <div class="main_mid_side">
+                    &nbsp&nbsp&nbsp&nbsp&nbsp
+                </div>
+
+                <div class="main_mid_mid">
+                    <div class="menucontain1">
+
+                        <!-- 모달1 세트 단품 -->
+                        <div class="modal-bg" onClick="javascript:popClose();">
+
+                        </div>
+
+                        <div class="modal-wrap">
+                            <div class="set0">
+                                <button class="set1" >
+                                    <img src="{% static 'image/kiosk/setmenu1.png'%}" class="img"
+                                        onClick="javascript:popClose();">
+                                    단품</button>
+                                <button class="set2">
+                                    <img src="{%static 'image/kiosk/setmenu2.png'%}" class="img"
+                                        onClick="javascript:popOpen1()">
+                                    세트</button>
+                            </div>
+                        </div>
+
+
+
+                        <!-- 모달2 감튀선택 -->
+                        <div class="modal-bg1" onClick="javascript:popClose1();">
+
+                        </div>
+
+                        <div class="modal-wrap1">
+                            <div class="set0">
+                                <div class="dessert_drink">
+
+                                    <div class="dessert_drink_mention">
+                                        세트 디저트및 드링크를 선택해주세요
+                                    </div>
+
+
+
+                                    <div class="lastbtn">
+                                        <div class="tab-area">
+                                            <input type="radio" name="tabs" id="tab5" checked>
+
+
+                                            <input type="radio" name="tabs" id="tab5">
+                                            <a href="#lastsetmenu1" for="tab5">디저트/치킨</a>
+
+                                            <input type="radio" name="tabs" id="tab6">
+                                            <a href="#lastsetmenu2" for="tab6">음료/커피</a>
+
+                                            <div class="choicebtn">
+                                                <button
+                                                    class="choice_prev button--shikoba button--round-s button--border-thin button--size0 "
+                                                    onClick="javascript:popClose1();">이전</button>
+                                                <button
+                                                    class="choice_complete button--shikoba button--round-s button--border-thin button--size0"
+                                                    onClick="javascript:popClose1(); javascript:popClose();">선택완료</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="lastsetmenu">
+                                        <div class="lastsetmenu1" id="lastsetmenu1">
+                                            <div id="content5" class="tab-content red"></div>
+                                                {% for dessert in desserts%}
+                                                    <button class="menu1">
+                                                        <input type="hidden" name="{{dessert.price}}" value="{{dessert.price}}">
+                                                        <img src="{{ dessert.image.url }}" class="img" name="{{dessert.name}}" value="{{drink}}"
+                                                            onClick="popOpen('{{dessert.name}}', '{{dessert.setPrice}}')">
+                                                        {{dessert.name}} {{dessert.setPrice}}원
+                                                    </button>
+                                                {% endfor %}
+                                        </div>
+
+                                        <div class="lastsetmenu2" id="lastsetmenu2">
+                                            <div id="content6" class="tab-content red"></div>
+                                                {% for drink in drinks %}
+                                                    <button class="menu1">
+                                                        <input type="hidden" name="{{drink.price}}" value="{{drink.price}}">
+                                                        <img src="{{ drink.image.url }}" class="img" name="{{drink.name}}" value="{{drink}}"
+                                                            onClick="popOpen('{{drink.name}}', '{{drink.setPrice}}')">
+                                                        {{drink.name}} {{drink.setPrice}}원
+                                                    </button>
+                                                {% endfor %}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-area">
+                            <input type="radio" name="tabs" id="tab1" checked>
+
+                            <input type="radio" name="tabs" id="tab1">
+                            <label for="tab1">추천메뉴</label>
+                            <input type="radio" name="tabs" id="tab2">
+                            <label for="tab2">햄버거</label>
+                            <input type="radio" name="tabs" id="tab3">
+                            <label for="tab3">디저트/치킨</label>
+                            <input type="radio" name="tabs" id="tab4">
+                            <label for="tab4">음료/커피</label>
+
+                            <div id="content1" class="tab-content red">
+                                {% for recommend in recommends %}
+                                    <button class="menu">
+                                        <input type="hidden" name="{{recommend.price}}" value="{{recommend.price}}">
+                                        <img src="{{ recommend.image.url }}" class="img" name="{{recommend.name}}" value="{{recommend}}"
+                                            onClick="popOpen('{{recommend.name}}', '{{recommend.price}}')">
+                                        {{recommend.name}} {{recommend.price}}원
+                                    </button>
+                                {% endfor %}
+                            </div>
+                            <div id="content2" class="tab-content blue">
+                                {% for burger in burgers %}
+                                    <button class="menu">
+                                        <input type="hidden" name="{{burger.price}}" value="{{burger.price}}">
+                                        <img src="{{ burger.image.url }}" class="img" name="{{burger.name}}" value="{{burger}}"
+                                            onClick="popOpen('{{burger.name}}', '{{burger.price}}')">
+                                        {{burger.name}} {{burger.price}}원
+                                    </button>
+                                    {% endfor %}
+                            </div>
+
+                            <div id="content3" class="tab-content yellow">
+                                {% for dessert in desserts %}
+                                    <button class="menu">
+                                        <input type="hidden" name="{{dessert.price}}" value="{{dessert.price}}">
+                                        <img src="{{ dessert.image.url }}" class="img" name="{{dessert.name}}" value="{{dessert}}"
+                                            onClick="popOpen('{{dessert.name}}', '{{dessert.price}}')">
+                                        {{dessert.name}} {{dessert.price}}원
+                                    </button>
+                                    {% endfor %}
+                            </div>
+
+                            <div id="content4" class="tab-content green">
+                                {% for drink in drinks %}
+                                    <button class="menu">
+                                        <input type="hidden" name="{{drink.price}}" value="{{drink.price}}">
+                                        <img src="{{ drink.image.url }}" class="img" name="{{drink.name}}" value="{{drink}}"
+                                            onClick="popOpen('{{drink.name}}', '{{drink.price}}')">
+                                        {{drink.name}} {{drink.price}}원
+                                    </button>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--mainmidmid-->
+
+
+                <div class="main_mid_side">
+                    &nbsp&nbsp&nbsp&nbsp&nbsp
+                </div>
+
+            </div>
+
+
+            <div class="main_bottom">
+                <div class="menucontain-bottom">
+                    <div class="menucontain-left-menu">
+                        <div class="menucontain-left-menu-top">
+                            <div class="c1">
+                                총 주문내역
+                            </div>
+                            <div class="c1" id="countMenu">
+                                개수: 0개
+                            </div>
+                            <div class="c1" id="sum">
+                                가격: 0원
+                            </div>
+
+                        </div>
+                        <div class="scroll">
+                            <div id="menuContainer">
+                            </div>
+                            {% comment %} <div class="menucontain-left-menu-bottom">
+                                메뉴:
+                                <div class="c4">
+                                    햄버거
+                                </div>
+                                개수:
+                                <div class="c4" id="result">
+                                    1
+                                </div>
+                                <div class="c3">
+                                    <button class="pointer">
+                                        <img src="{% static 'image/kiosk/pointer.png'%}" class="up"
+                                            onclick='count("plus")' value='+' />
+
+
+                                        <button class="pointer">
+                                            <img src="{% static 'image/kiosk/pointer2.png'%}" class="down"
+                                                onclick='count("minus")' value='-' />
+
+
+                                        </button>
+                                </div>
+                                가격
+                                <div class="c2">
+                                    9000원
+                                </div>
+                                <button class="c2">
+                                    토핑추가
+                                </button>
+                                <button class="c2">
+                                    변경
+                                </button>
+                                <button class="c2">
+                                    삭제
+                                </button>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+
+                    <button class="menucontain-cancel ">
+                        취소하기
+                    </button>
+
+                    <button class="menucontain-payment">
+                        결제하기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

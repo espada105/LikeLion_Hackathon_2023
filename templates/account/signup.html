@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+    <!-- lnag가 lang으로 수정 -->
+    <head>
+        <meta charset="UTF-8" />
+        <title>네이버 : 회원가입</title>
+        <link rel="stylesheet" href="{% static 'css/account/signup.css'%}">
+    </head>
+    <body>
+        <!-- header -->
+        <div id="header">
+            <button class="prev button button--shikoba button--round-s button--border-thin button--size0"><a href="{% url 'main' %}">처음화면</a></button>
+            <a href="https://nid.naver.com/user2/V2Join.nhn?m=agree#agreeBottom" target="_blank" title="네이버 회원가입 페이지 보러가기"
+                ><img src="{% static 'image/account/NAVER_CI_Green.png'%}" id="logo" /></a>
+            <button class="prev button button--shikoba button--round-s button--border-thin button--size0"><a href="{% url 'main' %}">이전화면</a></button>
+        </div>
+
+       
+                
+         <!-- wrapper -->
+    <div id="wrapper">
+
+        <!-- content-->
+        <div id="content">
+            <h3 class="join_title">
+                <form action="" method="POST">
+                    {% csrf_token %}
+
+                    {% for form in forms %}
+                    <div>
+                        <label for="{{ form.id_for_label }}">{{form.label}}</label>
+                        {{ form }}
+                    </div>
+                    {% endfor %}
+
+                    {% for form in forms %}
+                        <span class="errorlist">   
+                            {{ form.errors }}
+                        </span>
+                    {% endfor %}
+                    <div class="btn_area">
+                        <button type="submit" id="btnJoin" name="register-submit"
+                            value="register"><span>가입하기</span></button>
+                    </div>
+                </form>
+            </h3>
+        </div>
+    </div>
+    <script src="{% static 'account/js/main.js'%}"></script>
+</body>
+
+</html>

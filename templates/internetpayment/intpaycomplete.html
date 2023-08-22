@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/internetpayment/intcomplete.css'%}">
+
+
+
+    <title>internetpayment</title>
+</head>
+<body>
+    <div class="top">
+        
+    </div>
+
+
+    <div class="mid-center-top">
+        <div class="center1">
+            <div class="mid-center-top-left"> 주문완료 </div>
+            <div class="mid-center-top-right"> 장바구니 > 주문/결제 > 완료 </div>
+        </div>
+    </div>
+
+        <div class="mid">
+            <div class="mid-center">
+                <div class="thanksmention">
+                    구매해주셔서 감사링 감사띠
+                </div>
+                <div class="productoutbox">
+                    <div class="product">
+                        상품명: 스파클 생수 무라벨 2L X 6개
+                    </div>
+                    <div class="producer">
+                        주]강슬기를가진남자
+                    </div>
+                </div>
+               
+                <div class="ordererbox">
+                    <div class="nameoutbox">
+                        이름:<div class="nameinbox">
+                            {{item.user_name}}
+                        </div>
+                    </div>
+
+                    <div class="addressoutbox">주소지:
+                        <div class="addressinbox">
+                            {{item.item_address}}
+                        </div>
+                    </div>
+              
+                    <div class="completeoutbox">
+                        결제가 완료되었습니다
+                    </div>
+                </div>
+                <button class="homebutton"><a href="{% url 'main' %}">완료</a></button>
+            </div>
+            
+            
+            </div>
+        </div>
+
+
+
+        </div>
+</body>
+</html>

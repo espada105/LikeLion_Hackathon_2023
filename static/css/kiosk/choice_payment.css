@@ -1,0 +1,515 @@
+html{
+    background-color: rgba(26, 26, 26, 0.973);
+    margin: 0px;
+}
+
+body{
+    height: 100vh;
+    margin: 0px;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.allcontainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    font-family: 'BMHANNAPro';
+    position: fixed;
+}
+
+.main{
+    width: 85%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+
+}
+.main_top{
+    width: 100%;
+    height: 8.8%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-around;
+
+    
+    
+}
+
+.main_top_mid{
+  
+    padding-left: 2px;
+    width: 800px;
+    height: 70px;
+    
+    margin-top: 0.55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+
+}
+.img-logo{
+  height: 200px;
+}
+
+
+.main_mid{
+    width: 100%;
+    height: 74%;
+    background-color: rgb(255, 255, 255);
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+
+
+}
+.main_mid_select{
+    width: 100%;
+    height: 15%;
+    background-color: rgb(255, 0, 0);
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: #000000 solid 2px;
+}
+
+.burger{
+  font-family: 'BMHANNAPro';
+}
+
+
+
+.main_mid_select_menu{
+    width: 10%;
+    height: 70%;
+    border: 2px black solid;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 0%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: white;
+    padding: 0px;
+    cursor: pointer;
+    font-family: 'BMHANNAPro';
+    font-size: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.menu-choice{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.main_mid_side{
+    height: 100%;
+
+}
+
+.main_mid_mid{
+    height: 100%;
+    width: 100%;
+    border: #000000 2px solid;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    
+}
+
+
+
+.menucontain{
+  border: 1px;
+  width: 100%; 
+  height:100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.p1{
+font-size: 20px;
+}
+.payment1{
+  width: 30%;
+    height: 90%;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid black 2px;
+    background-color: white;
+    color: rgb(216, 3, 3);
+    cursor: pointer;
+    padding: 30px;
+    margin: 1%;
+    font-family: 'BMHANNAPro';
+
+}
+
+.payment2{
+  width: 30%;
+    height: 90%;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: solid black 2px;
+  background-color: white;
+  cursor: pointer;
+  padding: 30px;
+  margin: 1%;
+  font-family: 'BMHANNAPro';
+  color: rgb(38, 129, 38);
+}
+.payment3{
+  width: 30%;
+    height: 90%;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: solid black 2px;
+  background-color: white;
+  cursor: pointer;
+  padding: 30px;
+  margin: 1%;
+  font-family: 'BMHANNAPro';
+  color: rgb(22, 46, 156);
+}
+
+
+
+.menu{
+    width: 290px;
+    height: 330px;
+    border: #000000 2px solid;
+    margin: 1.08%;
+    padding: 0px;
+    cursor: pointer;
+    font-family: 'BMHANNAPro';
+    font-size: 30px;
+    /* background: url("burger.webp") no-repeat;
+    background-size: cover; */
+    
+}
+
+.img{
+  width: 100%;
+}
+
+
+
+
+.main_bottom{
+    width: 100%;
+    height: 16.8%;
+    background-color: rgb(255, 255, 255);
+    border-top: #000000 solid 2px;
+    
+
+}
+
+.menucontain-bottom{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+
+}
+.menucontain-left-menu{
+  width: 65%;
+  height: 100%;
+  border: #000000 2px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+.menucontain-left-menu-top{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-size: 30px;
+  
+  
+
+}
+.scroll{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  display: flex;
+
+}
+
+
+.menucontain-left-menu-bottom{
+  border-top: 2px black solid;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+
+
+
+}
+.c1{
+  width: 30%;
+}
+
+.c2{
+  width: 10%;
+  font-size: 29px;
+
+}
+.c3{
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.c4{
+  width: 10%;
+  font-size: 29px;
+
+}
+
+
+
+.pointer,.c2{
+  cursor: pointer;
+  background-color: #ffffff00;
+  border: 0px;
+  font-family: 'BMHANNAPro';
+  font-size: 26px;
+}
+.up,.down{
+  width: 30px;
+}
+
+
+.menucontain-cancel{
+  width: 15%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ffffff00;
+  font-family: 'BMHANNAPro';
+  font-size: 40px;
+  border-radius: 30px;
+
+}
+.menucontain-payment{
+  width: 15%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ffffff00;
+  font-family: 'BMHANNAPro';
+  font-size: 40px;
+  border-radius: 30px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'BMHANNAPro';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+    font-weight: normal;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600);
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'codropsicons';
+  src: url("../fonts/codropsicons/codropsicons.eot");
+  src: url("../fonts/codropsicons/codropsicons.eot?#iefix") format("embedded-opentype"), url("../fonts/codropsicons/codropsicons.woff") format("woff"), url("../fonts/codropsicons/codropsicons.ttf") format("truetype"), url("../fonts/codropsicons/codropsicons.svg#codropsicons") format("svg");
+}
+
+.hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.container {
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+.content {
+  padding: 2em 1em 5em;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.content h2 {
+  margin: 0 0 2em;
+}
+.content p {
+  margin: 1em 0;
+  padding: 0 0 2em;
+  font-size: 0.85em;
+}
+.box {
+  padding: 4.5em 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+
+
+.button {
+  float: left;
+  min-width: 150px;
+  max-width: 250px;
+  display: block;
+  margin: 1em;
+  padding: 1em 2em;
+  border: none;
+  background: none;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+  -moz-osx-font-smoothing: grayscale;
+}
+.button:focus {
+  outline: none;
+}
+.button > span {
+  vertical-align: middle;
+}
+
+
+.button--round-s {
+  border-radius: 5px;
+}
+
+
+/* Shikoba */
+.button.button--shikoba {
+    padding: 30px 15px 30px 15px;
+    overflow: hidden;
+    background: #fff;
+    color: #37474f;
+    border-color: #37474f;
+    -webkit-transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    font-family: 'BMHANNAPro';
+    font-size: 40px;
+    width:100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.button--size0{
+    padding-left: 2px;
+    width: 70px;
+    height: 70px;
+    border: 2px  rgb(0, 0, 0) solid;
+    margin-top: 0.55%;
+}
+
+
+  .button--shikoba.button--inverted {
+    color: #fff;
+    background: #7986cb;
+  }
+  .button--shikoba > span {
+    display: inline-block;
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  }
+  .button--shikoba .button__icon {
+    position: absolute;
+    left: 20px;
+    font-size: 18px;
+    -webkit-transform: translate3d(-40px, 2.5em, 0);
+    transform: translate3d(-40px, 2.5em, 0);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  }
+  .button--shikoba:hover .button__icon,
+  .button--shikoba:hover > span {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .button--shikoba:hover {
+    background: #000000;
+    border-color: #3f51b500;
+    color: #fff;
+  }

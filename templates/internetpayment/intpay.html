@@ -1,0 +1,311 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/internetpayment/intpay.css'%}">
+    <title>internetpayment</title>
+</head>
+
+<body>
+    <form action="{% url 'paymentcreate' %}" method="post">
+        {% csrf_token %}
+    <div class="top">
+        <div class="center">
+            <button class="prev button button--shikoba button--round-s button--border-thin button--size0">이전화면</button>
+
+
+        </div>
+    </div>
+
+
+    <div class="mid-center-top">
+        <div class="center1">
+            <div class="mid-center-top-left"> 주문 / 결제 </div>
+            <div class="mid-center-top-right"> 장바구니 > 주문/결제 > 완료 </div>
+        </div>
+    </div>
+
+    <div class="mid">
+        <div class="mid-center">
+
+
+            <div class="popupbox">
+                <div class="popupinbox">
+                    <div class="popup"> !팝업 차단 해제 안내 </div>
+                    <div class="popup2"> 결제하기 버튼을 클릭 하였을 때, 결제창이 뜨지 않고 반응이 없는 경우 팝업차단 기능을 해제하여 주시기 바랍니다.
+                        <br>(사파리: OS X메뉴의 Safari -환경설정 - 보안-'팝업 윈도우 차단'체크박스 해제)
+                    </div>
+                </div>
+            </div>
+
+            <div class="colored-line"></div>
+
+            <div class="informbox">
+                <div class="informbox-top">
+
+
+                </div>
+
+
+
+
+            </div>
+
+            <hr class="hr2">
+            <div class="address">
+                <div class="address-choice">
+                    <div class="address-choice-information"> 배송지 정보 </div>
+                    <div class="address-information">
+                        <div class="address-list">
+                            신규배송지(신규회원)
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="orderer">
+                    주문자정보
+                    <div class="orderer-name"> 홍길동 </div>
+                    <div class="orderer-phonenumber">
+                        0100***0***
+
+                    </div>
+                    <div class="orderer-email">
+                        ho******@*******.com
+
+                    </div>
+
+                    <hr class="hr2">
+
+
+                </div>
+
+            </div>
+            
+                <hr class="hr2">
+                <div class="address2">
+                    <div class="address3">
+                        <div class="name">
+                            <!-- form 여기임 -->
+                            수령인 <input type="text" class="inputclass" placeholder="홍길동" name="user_name">
+                        </div>
+                        <div class="number">
+                            <div class="phone-number">
+                                핸드폰 번호<input type="text" class="inputclass" placeholder="000-0000-0000"
+                                    name="item_phone">
+                            </div>
+
+                        </div>
+
+                        <div class="address">
+                            주소
+                        </div>
+                        <input type="text" class="inputclass" placeholder="주소를입력해주세요" name="item_address">
+                        <div class="sparkle">
+                            상품명: 스파클 생수 무라벨 2L X 6개
+                        </div>
+                        <input type="text" class="inputnumber" placeholder="요청사항입력하기" name="item_require">
+                        <br><br><br><br>
+
+                    </div>
+                </div>
+
+                <hr class="hr2">
+                <div class="salebox">
+                    <div class="saleandpoint">
+                        <div class="salepoint">
+                            할인 및 포인트
+                        </div>
+                        <div class="couponsale">
+                            쿠폰 할인
+                        </div>
+
+                        <div>
+                            <div class="coupondiscount">
+                                <div class="priceordercoupon"> 상품/주문 쿠폰 </div>
+                                <div class="coupondiscount-price">0원</div>
+
+                                <div class="coupondiscount-holdingcoupon">(사용가능:0장|보유:2장)</div>
+                            </div>
+                            <div class="coupondiscount">
+                                <div class="priceordercoupon"> 배송비 쿠폰 </div>
+                                <div class="">0원</div>
+
+                                <div class="">(사용가능:0장|보유:2장)</div>
+                            </div>
+                        </div>
+
+                        <hr class="hr2">
+
+                        <div>
+                            포인트-머니
+                            <div class="coupondiscount">
+                                <div class="priceordercoupon"> 상품/주문 쿠폰 </div>
+                                <div class="coupondiscount-price">0원</div>
+
+                                <div class="coupondiscount-holdingcoupon">(사용가능:0장|보유:2장)</div>
+                            </div>
+                            <div class="coupondiscount">
+                                <div class="priceordercoupon"> 배송비 쿠폰 </div>
+                                <div class="">0원</div>
+
+                                <div class="">(사용가능:0장|보유:0장)</div>
+                            </div>
+                            <div class="coupondiscount">
+                                <div class="priceordercoupon"> 제휴포인트 </div>
+                                <div class="">0원</div>
+
+                                <div class="">(사용가능:0장|보유:0장)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orderer">
+                        결제상세
+                        <div class="orderprice">
+                            <div>주문금액</div>
+                            <div>4700원</div>
+                        </div>
+                        <div class="orderer-phonenumber">
+                            <div class="">상품금액</div>
+                            <div class="">배송비</div>
+                            <div class="">쿠폰할인</div>
+                        </div>
+
+                        <hr class="hr2">
+                        <div>네이버페이 머니 사용</div>
+                        <div>4700원</div>
+                    </div>
+                </div>
+
+                <hr class="hr2">
+
+                <div class="paymentmethod">
+                    <div class="paymentmethod-outbox">
+                        <div class="method1">결제수단 등록하기 (최초에 한 번 등록)</div>
+                        <div class="paymentmethod-inbox">
+                            <div class="paymentbtn">
+                                <div>
+                                    <div class="paymentbtn2">카드정보를 입력해주세요
+                                    </div>
+                                    카드결졔
+                                    <div>
+                                        <div class="cardnumber1">
+
+                                            <input placeholder="0000">
+                                            <input placeholder="0000">
+                                            <input placeholder="0000">
+                                            <input placeholder="0000">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="cardnumber2">
+                                        <div class="cardnumber">
+                                            유효기간
+                                            <input placeholder="YYYY-MM-DD">
+                                        </div>
+
+                                        <div class="cardnumber">
+                                            cvc
+                                            <input placeholder="***">
+                                        </div>
+
+                                    </div>
+                                    <div class="cardnumber4">
+                                        <div class="cardnumber">
+                                            카드 비밀번호
+                                            <input placeholder="**">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="hr2">
+
+                <div>현금영수증</div>
+                <div class="cash-receipt">
+                    <div class="cash-receipt-menu">
+                        <div class="cash-receipt-menu-radio">
+                            <input type="radio" id="option1" name="option" value="1">
+                            <label for="option1">개인소득공제용&nbsp&nbsp&nbsp</label></br>
+                            <input type="radio" id="option2" name="option" value="2">
+                            <label for="option2">사업자증빙용-세금계산서&nbsp&nbsp&nbsp</label></br>
+                            <input type="radio" id="option2" name="option" value="2">
+                            <label for="option2">신청안함&nbsp&nbsp&nbsp</label></br>
+                        </div>
+                        <div class="cash-receipt-phonenumber">
+                            휴대폰번호: <input class="cash-receipt-phonenumber-input" placeholder="0000-0000-0000">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pointallbox">
+                    <div class="pointbox">
+                        <div class="point">
+                            <div class="point-left">포인트 혜택</div>
+                            <div class="point-right">최대 87원</div>
+                        </div>
+
+                        <div class="point-benefit">
+                            <div class="point-benefit-left">
+                                <div class="point-benefit-left-1">
+                                    <div class="">구매적립</div>
+                                    <div class="">총87원</div>
+                                </div>
+                                <div class="point-benefit-left-2">
+                                    <div class="point-benefit-left-2-1">
+                                        <div class="">기본적립</div>
+                                        <div class="">네이버 페이 머니 결제 적립</div>
+                                    </div>
+                                    <div class="point-benefit-left-2-2">
+                                        <div class="">17원</div>
+                                        <div class="">70원</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="naverpaypoint">
+                            네이버페이사진 구매 감사 포인트 즉시 받기> +68원
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="hr2">
+                <div class="finalbox">
+                    <div class="topbox">
+                        <div class="topbox1">
+                            개인정보 제공 동의: &nbsp
+                            <div class="topbox-1-1">
+                                주] 강슬기를가진남자
+                            </div>
+                        </div>
+                        <div class="bottombox">
+                            주문 내용을 확인하였으며, 정보 제공 등에 동의합니다
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paymentoutbox">
+                    <div class="paymentbuttonbox">
+                        <button type="submit" class="paymentbutton">결제하기</button>
+                    </div>
+                </div>
+             
+        </div>
+    </div>
+    </div>
+
+</form>    
+</body>
+
+</html>
